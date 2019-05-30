@@ -6,6 +6,7 @@ ws = wb['Pharmacy']
 current_row = 1
 last_row = ws.max_row + 1
 
+
 def add_item():
     global last_row
     ws.cell(last_row, 1).value = item_name.get()
@@ -14,7 +15,6 @@ def add_item():
     ws.cell(last_row, 4).value = item_categ.get()
     ws.cell(last_row, 5).value = item_disc.get()
     clear_fields()
-    wb.save('database.xlsx')
 
 
 def view_first():
@@ -66,7 +66,6 @@ def update_item():
                 ws.cell(cell.row, 4).value = item_categ.get()
                 ws.cell(cell.row, 5).value = item_disc.get()
     clear_fields()
-    wb.save('database.xlsx')
 
 
 def delete_item():
@@ -77,7 +76,6 @@ def delete_item():
                 ws.delete_rows(cell.row, 1)
     last_row -= 1
     clear_fields()
-    wb.save('database.xlsx')
 
 
 def search_item():
